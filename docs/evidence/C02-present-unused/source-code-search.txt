@@ -23,3 +23,12 @@ benchmarks/C02-present-unused/routes/demoRoutes.js
 7:router.get('/api/demo', run);
 
 
+Command:  (Working in web_dependency_reachability)
+
+rg -n "require\(['\"]lodash['\"]\)|from ['\"]lodash['\"]|import\(['\"]lodash['\"]\)" \
+  benchmarks/C02-present-unused \
+  -g '*.js' \
+  -g '!**/node_modules/**'
+
+
+Output: Nothing
