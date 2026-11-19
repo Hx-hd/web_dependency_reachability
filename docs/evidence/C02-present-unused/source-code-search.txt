@@ -1,0 +1,25 @@
+Command: (Working in web_dependency_reachability)
+
+ rg -n 'router\.get|router\.post|app\.use|lodash|minimist|\.template\(' \
+  benchmarks/C02-present-unused \
+  -g '*.js' \
+  -g '!**/node_modules/**'
+
+Output:
+
+benchmarks/C02-present-unused/caseInfo.js
+6:  "packageName": "lodash",
+
+benchmarks/C02-present-unused/services/demoService.js
+2:// This HTTP path deliberately does NOT import lodash or minimist.
+
+benchmarks/C02-present-unused/app.js
+7:app.use((req, res, next) => {
+11:app.use('/', demoRoutes);
+
+benchmarks/C02-present-unused/routes/demoRoutes.js
+5:router.get('/', index);
+6:router.get('/health', health);
+7:router.get('/api/demo', run);
+
+
