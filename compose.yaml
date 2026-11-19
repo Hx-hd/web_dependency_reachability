@@ -1,0 +1,7 @@
+services:
+  c02:
+    build:
+      context: ./benchmarks/C02-present-unused
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:3002:3000"
