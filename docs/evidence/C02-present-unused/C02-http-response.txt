@@ -1,0 +1,4 @@
+Command: curl "http://localhost:3002/api/demo?name=Student"
+
+Output:
+{"caseId":"C02","expectedClassification":"PRESENT_UNUSED","output":"Hello, Student!","selectedDependencyCalled":false,"routeTrace":"GET /api/demo -> routes/demoRoutes.js -> controllers/demoController.js -> services/demoService.js -> plain JavaScript (no selected dependency)","explanation":"This is benign reachability evidence, not proof that a vulnerability can be exploited."}
